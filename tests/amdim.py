@@ -7,7 +7,7 @@ from rsp.amdim.inference import amdim
 # --
 # Load model
 
-model = amdim(state_dict_path='weights/amdim/tmp.pth')
+model = amdim(state_dict_path='weights/amdim/amdim_weights_dummy.pth')
 
 # --
 # Load example (preformatted) + run inference
@@ -18,7 +18,7 @@ img_batch = np.stack([img] * 10)
 img_batch = torch.FloatTensor(img_batch)
 
 out = model(img_batch)
-out
+print(out[0])
 
 # --
 # Load example (raw) + run inference
@@ -29,4 +29,4 @@ img_batch = np.stack([img] * 10)
 img_batch = torch.FloatTensor(img_batch)
 
 out = model(img_batch)
-out
+print(out[0])

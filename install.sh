@@ -18,3 +18,23 @@ pip install tifffile
 pip install git+https://github.com/cfld/amdim.git --ignore-installed
 
 pip install -e .
+
+# --
+# Download models
+
+function download_google_drive {
+    SRC=$1
+    DST=$2
+    echo "$SRC -> $DST"
+    
+    curl -c /tmp/cookies "https://drive.google.com/uc?export=download&id=$SRC" > /tmp/intermezzo.html
+    DL_LINK=$(cat /tmp/intermezzo.html |\
+        grep -Po 'uc-download-link" [^>]* href="\K[^"]*' |\
+        sed 's/\&amp;/\&/g'
+    )
+    curl -L -b /tmp/cookies https://drive.google.com$DL_LINK > $DST    
+}
+
+
+mkdir -p weights/amdim
+download_google_drive 15ikQ_P5KTWzmW8KDw_8H3ToCYlPzET79 weights/amdim/amdim_weights_dummy.pth

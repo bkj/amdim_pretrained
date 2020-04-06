@@ -4,8 +4,8 @@ Pretrained remote sensing models
 
 ## Installation
 
-See `install.sh`
+See `./install.sh`
 
 ## Usage
 
-See `tests/*`
+See `./tests/*`
