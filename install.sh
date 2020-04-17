@@ -35,6 +35,10 @@ function download_google_drive {
     curl -L -b /tmp/cookies https://drive.google.com$DL_LINK > $DST    
 }
 
-
+# amdim
 mkdir -p weights/amdim
 download_google_drive 15ikQ_P5KTWzmW8KDw_8H3ToCYlPzET79 weights/amdim/amdim_weights_dummy.pth
+
+# moco_r50
+mkdir -p weights/moco_r50
+download_google_drive 1TxmvNV6PDn_hlFVMWfU_Gg2uxP1LbhWo weights/moco_r50/checkpoint_0049.pth.tar

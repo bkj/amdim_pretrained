@@ -22,5 +22,7 @@ model = model.eval()
 img = load_patch('data/naip/dr7dpc.npy')
 img = img[None] # unsqueeze first dimension for pytorch
 
-out = model(img)
+with torch.no_grad():
+    out = model(img)
+
 print(out[0])
