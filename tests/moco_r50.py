@@ -13,7 +13,7 @@ from rsp.moco_r50.inference import moco_r50
 # --
 # Load model
 
-model = moco_r50(state_dict_path='weights/moco_r50/checkpoint_0049.pth.tar')
+model = moco_r50(state_dict_path='weights/moco_r50/moco_naip_v0.pth.tar')
 model = model.eval()
 
 # --

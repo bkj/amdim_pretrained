@@ -41,4 +41,4 @@ download_google_drive 15ikQ_P5KTWzmW8KDw_8H3ToCYlPzET79 weights/amdim/amdim_weig
 
 # moco_r50
 mkdir -p weights/moco_r50
-download_google_drive 1TxmvNV6PDn_hlFVMWfU_Gg2uxP1LbhWo weights/moco_r50/checkpoint_0049.pth.tar
+download_google_drive 1TxmvNV6PDn_hlFVMWfU_Gg2uxP1LbhWo weights/moco_r50/moco_naip_v0.pth.tar
