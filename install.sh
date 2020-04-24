@@ -39,6 +39,10 @@ function download_google_drive {
 mkdir -p weights/amdim
 download_google_drive 15ikQ_P5KTWzmW8KDw_8H3ToCYlPzET79 weights/amdim/amdim_weights_dummy.pth
 
-# moco_r50
+# moco_r50/naip
 mkdir -p weights/moco_r50
 download_google_drive 1TxmvNV6PDn_hlFVMWfU_Gg2uxP1LbhWo weights/moco_r50/moco_naip_v0.pth.tar
+
+# moco_r50/sentinel
+mkdir -p weights/moco_r50
+download_google_drive 1KQnQfONom9Ymp_6lJdWC_-vJkpbVtG4P weights/moco_r50/moco_sentinel_v0.pth.tar
