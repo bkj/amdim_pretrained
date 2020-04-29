@@ -9,8 +9,8 @@ from torch import nn
 
 from rsp.moco_r50.resnet import resnet50
 
-def moco_r50(state_dict_path, drop_fc=True):
-    state_dict  = torch.load(state_dict_path)['state_dict']
+def moco_r50(state_dict_path, drop_fc=True, map_location=torch.device('cpu')):
+    state_dict  = torch.load(state_dict_path, map_location=map_location)['state_dict']
     
     in_channels = state_dict['module.encoder_q.conv1.weight'].shape[1]
     model       = resnet50(in_channels=in_channels, num_classes=128)
