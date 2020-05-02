@@ -71,7 +71,7 @@ class AMDIM(nn.Module):
                 return self._forward(x)
 
 
-def amdim(state_dict_path):
-    state_dict = torch.load(state_dict_path)
+def amdim(state_dict_path, map_location=torch.device('cpu')):
+    state_dict = torch.load(state_dict_path, map_location=map_location)
     return AMDIM(state_dict)
 
