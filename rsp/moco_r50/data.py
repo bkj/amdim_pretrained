@@ -27,12 +27,15 @@ def naip_augmentation_valid():
         AToTensor(),
     ])
 
-def load_patch_naip(inpath):
-    X = np.load(inpath)
+def prep_patch_naip(X):
     X = X[:4].transpose(1, 2, 0).astype(np.float32) / 255
-    
     transform = naip_augmentation_valid()
     X = transform(image=X)['image']
+    return X
+
+def load_patch_naip(inpath):
+    X = np.load(inpath)
+    X = prep_patch_naip(X)
     return X
 
 # --
@@ -55,11 +58,14 @@ def sentinel_augmentation_valid():
         AToTensor(),
     ])
 
-def load_patch_sentinel(inpath):
-    X = np.load(inpath)
+def prep_patch_sentinel(X):
     X = X[:12].transpose(1, 2, 0).astype(np.float32) / 10_000
-    
     transform = sentinel_augmentation_valid()
     X = transform(image=X)['image']
+    return X
+
+def load_patch_sentinel(inpath):
+    X = np.load(inpath)
+    X = prep_patch_sentinel(X)
     return X
 
